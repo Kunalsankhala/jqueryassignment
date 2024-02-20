@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Animation</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // jQuery Animation
+      $("#box").fadeOut(2000).fadeIn(2000);
+    });
+  </script>
+</head>
+<body>
+  <div id="box"></div>
+</body>
+</html>

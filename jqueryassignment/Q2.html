@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Applying CSS using jQuery</title>
+  <style>
+    .myElement {
+      color: blue;
+      font-size: 20px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Applying CSS using jQuery
+      $("#myElement").css("background-color", "yellow");
+    });
+  </script>
+</head>
+<body>
+  <div id="myElement">Hello, World!</div>
+</body>
+</html>

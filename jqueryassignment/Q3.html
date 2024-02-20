@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Slider with Animation</title>
+  <style>
+    #slider-container {
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    .slide {
+      width: 400px;
+      height: 300px;
+      position: absolute;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Set initial slide index
+      var currentSlide = 0;
+
+      // Function to show the current slide
+      function showSlide(index) {
+        // Hide all slides
+        $('.slide').hide();
+        // Show the slide at the specified index
+        $('.slide').eq(index).fadeIn();
+      }
+
+      // Initial slide display
+      showSlide(currentSlide);
+
+      // Function to move to the next slide
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % $('.slide').length;
+        showSlide(currentSlide);
+      }
+
+      // Set interval for automatic slide transition
+      var slideInterval = setInterval(nextSlide, 3000);
+
+      // Pause slide transition on hover
+      $('#slider-container').hover(function() {
+        clearInterval(slideInterval);
+      }, function() {
+        slideInterval = setInterval(nextSlide, 3000);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="slider-container">
+    <div class="slide" style="background-color: #ff0000;">Slide 1</div>
+    <div class="slide" style="background-color: #00ff00; display: none;">Slide 2</div>
+    <div class="slide" style="background-color: #0000ff; display: none;">Slide 3</div>
+    <!-- Add more slides as needed -->
+  </div>
+</body>
+</html>
